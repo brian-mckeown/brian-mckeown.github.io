@@ -1,435 +1,288 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="portfolioApp">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Brian McKeown</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top" ng-controller="mainController">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top" ng-bind="name"></a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">Skills</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Projects</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>Brian McKeown</title>
+      <!-- Favicon-->
+      <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- Google fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+      <!-- Core theme CSS (includes Bootstrap)-->
+      <link href="css/styles.css" rel="stylesheet" />
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+      <script src="./js/app.js"></script>
+      <!-- Bootstrap core JS-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="js/scripts.js"></script>
+      <!-- Font Awesome icons (free version)-->
+      <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+   </head>
+   <body id="page-top" ng-controller="mainController">
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand" href="#page-top" ng-bind="name"></a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Projects</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">Skills</a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+               </ul>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/newprofile.jpg" alt="profile image" />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0" ng-bind="name"></h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0" ng-bind="slogan"></p>
+         </div>
+      </nav>
+      <!-- Masthead-->
+      <header class="masthead bg-primary text-white text-center">
+         <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="assets/img/newprofile.jpg" alt="profile image" />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0" ng-bind="name"></h1>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0" ng-bind="slogan"></p>
+         </div>
+      </header>
+      <!-- About Section-->
+      <section class="page-section bg-white text-white mb-0" id="about">
+         <div class="container">
+            <!-- About Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-dark">About Me</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-dark">
+               <div class="divider-custom-line"></div>
+               <div class="divider-custom-icon"><i class="fa-solid fa-user"></i></div>
+               <div class="divider-custom-line"></div>
             </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projects</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fa-brands fa-github"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-
-                <div class="container text-center">
-                    <p ng-bind="projectInfo"></p>
-                    <button class="btn btn-primary" href="{{githubProfileUrl}}"><i class="fa-brands fa-github"></i> View on Github</button>
-                    <form action="{{githubProfileUrl}}">
-                        <input type="submit" class="btn btn-primary" value="View on Github" />
-                    </form>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <div class="card col-md-6 col-lg-4 mb-5 mb-lg-0" ng-repeat="card in cards">
-                        <div class="card-body p-3 text-center">
-                          <h4 class="card-title" ng-bind="card.name"></h4>
-                          <hr>
-                          <p class="card-text" ng-bind="card.description"></p>
-                          <hr>
-                          <h6 class="fw-lighter">Latest Update: {{card.updated_at | date:'MM/dd/yyyy @ h:mma'}}</h6>
-                          <h6 class="fw-lighter">Created: {{card.created_at | date:'MM/dd/yyyy @ h:mma'}}</h6>
-                          <h6 class="fw-lighter">Languages:</h6>
-                          <span ng-repeat="language in card.languages_array" class="badge bg-primary" ng-bind="language"></span>
-                          <hr>
-                          <div>
-                          <a href="{{card.html_url}}" target="_blank" class="card-link">View on Github</a>
-                          <a href="#" class="card-link">Another link</a>
-                          </div>
+            <!-- About Section Content-->
+            <div class="row">
+               <div class="col-lg-4 ms-auto">
+                  <p class="lead text-dark" ng-bind="aboutInfo1"></p>
+               </div>
+               <div class="col-lg-4 me-auto">
+                  <p class="lead text-dark" ng-bind="aboutInfo2"></p>
+               </div>
+            </div>
+            <!-- About Section Button-->
+            <div class="text-center mt-4">
+               <a class="btn btn-xl btn-outline-dark" href="{{linkedInUrl}}" target="_blank">
+               <i class="fa-brands fa-linkedin"></i>
+               LinkedIn Profile
+               </a>
+            </div>
+         </div>
+      </section>
+      <!-- Portfolio Section-->
+      <section class="page-section portfolio bg-secondary" id="portfolio">
+         <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Projects</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+               <div class="divider-custom-line"></div>
+               <div class="divider-custom-icon"><i class="fa-brands fa-github"></i></div>
+               <div class="divider-custom-line"></div>
+            </div>
+            <div class="container text-center text-white">
+               <p ng-bind="projectInfo"></p>
+               <div class="text-center mt-4">
+                  <a class="btn btn-sm btn-primary" href="{{githubProfileUrl}}" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  Go to Github
+                  </a>
+               </div>
+               <div class="pt-5">
+                  <h4>Github Public Projects: {{cards.length}}</h4>
+               </div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="card-group">
+               <div class="row justify-content-center pt-3">
+                   <div class="px-3 col-md-6 col-lg-4 col-12 mb-3 mb-lg-3" ng-repeat="card in cards | orderBy: 'pushed_at':true">
+                  <div class="card bg-light border border-white h-100">
+                     <div class="card-body p-3 text-center">
+                        <h4 class="card-title" ng-bind="card.name"></h4>
+                        <hr>
+                        <p class="card-text" ng-bind="card.description"></p>
+                     </div>
+                     <div class="text-start card-body">
+                        <div>
+                           <a class="normal-anchor">Latest Update:</a>
+                           <span class="badge bg-light text-dark" ng-bind="card.pushed_at | date:'MM/dd/yyyy @ h:mma'"></span>
                         </div>
-                      </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fa-solid fa-user"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead" ng-bind="aboutInfo1"></p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead" ng-bind="aboutInfo2"></p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="{{linkedInUrl}}" target="_blank">
-                        <i class="fa-brands fa-linkedin"></i>
-                        LinkedIn Profile
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2021</small></div>
-        </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+                        <div>
+                           <a class="normal-anchor">Created: </a>
+                           <span class="badge bg-light text-dark" ng-bind="card.created_at | date:'MM/dd/yyyy @ h:mma'"></span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+                        <div>
+                           <a class="normal-anchor">Topics: </a>
+                           <span ng-repeat="topic in card.topics" class="badge bg-secondary" ng-bind="topic"></span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+                        <div>
+                           <a class="normal-anchor">Languages: </a>
+                           <span ng-repeat="language in card.languages_array" class="badge bg-primary text-end" ng-bind="language"></span>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                     <div class="card-footer text-center bg-light">
+                        <a href="{{card.html_url}}" target="_blank" class="card-link"><i class="fa-brands fa-github"></i> View on Github</a>
+                        <a href="{{card.homepage}}" target="_blank" class="card-link" ng-show="card.homepage"><i class="fa-solid fa-link"></i> Demo</a>
+                     </div>
+                  </div>
+                  </div>
+               </div>
             </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+         </div>
+      </section>
+      <!-- Skills Section-->
+      <section class="page-section" id="skills">
+         <div class="container">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Skills</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-secondary">
+               <div class="divider-custom-line"></div>
+               <div class="divider-custom-icon"><i class="fa-solid fa-tools"></i></div>
+               <div class="divider-custom-line"></div>
             </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <hr>
+            <div class="row justify-content-center">
+               <h3 class="text-center">Frontend</h3>
+               <div class="col-sm-3 col-4 text-center pt-3" ng-repeat="skill in frontendSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
             </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
-                                        <i class="fas fa-times fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <hr>
+            <div class="row justify-content-center">
+               <h3 class="text-center">Backend</h3>
+               <div class="col-sm-3 col-4 text-center pt-3" ng-repeat="skill in backendSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
             </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-        <script src="./js/app.js" async defer></script>
-    </body>
+            <hr>
+            <div class="row justify-content-center">
+               <h3 class="text-center">Database</h3>
+               <div class="col-sm-3 col-4 text-center pt-3" ng-repeat="skill in dbSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+               <h3 class="text-center">Integration</h3>
+               <div class="col-sm-3 col-4 text-center pt-3" ng-repeat="skill in integrationSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+               <h3 class="text-center">Development Tools</h3>
+               <div class="col-sm-3 col-4 text-center pt-3" ng-repeat="skill in devtoolSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center pt-3">
+               <h3 class="text-center">System Admin</h3>
+               <div class="col-sm-3 col-4 text-center" ng-repeat="skill in sysadminSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center pt-3">
+               <h3 class="text-center">Low-Code Platforms</h3>
+               <div class="col-sm-3 col-4 text-center" ng-repeat="skill in lowcodeSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center pt-3">
+               <h3 class="text-center">OS Dev Environments</h3>
+               <div class="col-sm-3 col-4 text-center pt-3" ng-repeat="skill in osSkills">
+                  <div>
+                     <img src="./assets/img/icons/{{skill}}.svg" width="75px" height="75px" alt="{{skill}} icon">
+                  </div>
+                  <div>
+                     <p ng-bind="skill"></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Footer-->
+      <footer class="footer text-center" id="contact">
+         <div class="container">
+            <div class="p-3">
+            </div>
+            <div class="row">
+               <!-- Footer Location-->
+               <div class="col-lg-4 mb-5 mb-lg-0">
+                  <h4 class="text-uppercase mb-4">Contact</h4>
+                  <p class="lead mb-0"><i class="fa-solid fa-envelope"></i> {{email}}</p>
+               </div>
+               <!-- Footer Social Icons-->
+               <div class="col-lg-4 mb-5 mb-lg-0">
+                  <h4 class="text-uppercase mb-4">Links</h4>
+                  <a class="btn btn-outline-light btn-social mx-1" href="{{linkedInUrl}}" target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                  <a class="btn btn-outline-light btn-social mx-1" href="{{githubProfileUrl}}" target="_blank"><i class="fab fa-fw fa-github"></i></a>
+                  <a class="btn btn-outline-light btn-social mx-1" href="{{stackOverflowUrl}}" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a>
+               </div>
+               <!-- Footer About Text-->
+               <div class="col-lg-4">
+                  <h4 class="text-uppercase mb-4">Questions?</h4>
+                  <p class="lead mb-0">
+                     Shoot me a message! Thanks for checking out my site!
+                  </p>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Copyright Section-->
+      <div class="copyright py-4 text-center text-white">
+         <div class="container"><small>Copyright &copy; {{name}} {{getYear()}}</small></div>
+      </div>
+   </body>
 </html>
