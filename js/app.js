@@ -2,7 +2,7 @@ let app = angular.module("portfolioApp", []);
 
 app.controller("mainController", function($scope, $http) {
   const githubURL = 'https://api.github.com';
-  const githubUser = 'bmck2006';
+  const githubUser = 'brian-mckeown';
   const linkedInUser = 'bmckeown2011';
   $scope.githubProfileUrl = 'https://www.github.com/' + githubUser;
   $scope.linkedInUrl = 'https://www.linkedin.com/in/' + linkedInUser;
